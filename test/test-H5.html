@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>H5 测试</title>
+    <link rel="stylesheet" type="text/css" href="../css/H5ComponentBase.css">
+    <link rel="stylesheet" type="text/css" href="../css/H5.css">
+    <style type="text/css" media="screen">
+    body {
+        margin: 0;
+        padding: 0
+    }
+    </style>
+</head>
+
+<body>
+    <script src="../js/lib/jquery.js" type="text/javascript"></script>
+    <script src="../js/lib/jquery-ui.min.js" type="text/javascript"></script>
+    <script src="../js/lib/jquery.fullPage.js" type="text/javascript"></script>
+    <script src="../js/H5ComponentBase.js" type="text/javascript"></script>
+    <script src="../js/H5.js" type="text/javascript"></script>
+    <script type="text/javascript">
+    $(function() {
+        var h5 = new H5();
+        h5
+            .addPage('face')
+            .addComponent('logo', {
+                text: 'logo',
+                width: 400,
+                height: 100,
+                css: {
+                    backgroundColor: 'red',
+                    top: 200,
+                    opacity: 0
+                },
+                animateIn: {
+                    opacity: 1
+                },
+                animateOut: {
+                    opacity: 0
+                },
+                center: true
+            })
+            .addComponent('slogan', {
+                text: 'slogan',
+                width: 400,
+                height: 100,
+                css: {
+                    backgroundColor: 'red',
+                    top: 350
+                },
+                center: true
+            })
+            .addPage('desc')
+            .addComponent('caption', {
+                text: '核心理念',
+                width: 400,
+                height: 100,
+                css: {
+                    backgroundColor: 'green',
+                    top: 350
+                },
+                center: true
+            })
+            .addPage('page-3')
+            .addComponent('caption', {
+                text: '课程方向分布'
+            })
+            .loader();
+    })
+    </script>
+</body>
+
+</html>
