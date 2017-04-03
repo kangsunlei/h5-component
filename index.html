@@ -9,7 +9,11 @@
 </head>
 
 <body>
-
+	<div class="loading">
+		<div class="double-bounce1"></div>
+		<div class="double-bounce2"></div>
+		<div id="rate">0%</div>
+	</div>
 
   <script src="js/lib/jquery.js" type="text/javascript"></script>
   <script src="js/lib/jquery-ui.min.js" type="text/javascript"></script>
@@ -24,82 +28,87 @@
 	  }
 
 	  document.write(html.join(''));
-	  </script>
-	  <!-- H5对象：进行内容管理 -->
-	  <script src="js/H5.js" type="text/javascript"></script>
-	  <link rel="stylesheet" type="text/css" href="css/H5.css">
-	  <!-- 页面样式 -->
-	  <style type="text/css" media="screen">
-		  body {
-		    padding: 0;
-		    margin: 0;
-		  }
-		  
-		  .h5_page {
-		    background-image: url(imgs/page_bg.png);
-		  }
-		  
-		  .h5_page_face {
-		    background-image: url(imgs/face_bg.png);
-		  }
-		  
-		  .h5_component_name_slogan {
-		    -webkit-animation: rock 2s infinite 2s;
-		  }
-		  
-		  @-webkit-keyframes rock {
-		    0% {
-		      transform: rotate(0deg);
-		    }
-		    5% {
-		      transform: rotate(3deg);
-		    }
-		    10% {
-		      transform: rotate(-4deg);
-		    }
-		    15% {
-		      transform: rotate(3deg);
-		    }
-		    20% {
-		      transform: rotate(-2deg);
-		    }
-		    25% {
-		      transform: rotate(1deg);
-		    }
-		    30% {
-		      transform: rotate(-1deg);
-		    }
-		    70% {
-		      transform: rotate(0deg);
-		    }
-		    100% {
-		      transform: rotate(0deg);
-		    }
-		  }
-		  
-		  .h5_component_name_caption {
-		    background-image: url(imgs/page_caption_bg.png);
-		    width: 283px;
-		    height: 160px;
-		    text-align: center;
-		    line-height: 140px;
-		    font-size: 20px;
-		    color: #fff;
-		  }
-		  
-		  .h5_component_name_back {
-		    top: 30px;
-		    -webkit-animation: back 1s infinite 2s;
-		  }
-		  
-		  @-webkit-keyframes back {
-		    50% {
-		      top: 20px;
-		    }
-		  }
-	  </style>
-	  <!-- 主要逻辑 -->
-	  <script type="text/javascript">
+  </script>
+  <!-- H5对象：进行内容管理 -->
+  <script src="js/H5.js" type="text/javascript"></script>
+  <link rel="stylesheet" type="text/css" href="css/H5.css">
+
+  <!-- H5对象：进行内容管理 -->
+  <script src="js/H5_loading.js" type="text/javascript"></script>
+  <link rel="stylesheet" type="text/css" href="css/H5_loading.css">
+
+  <!-- 页面样式 -->
+  <style type="text/css" media="screen">
+	  body {
+	    padding: 0;
+	    margin: 0;
+	  }
+	  
+	  .h5_page {
+	    background-image: url(imgs/page_bg.png);
+	  }
+	  
+	  .h5_page_face {
+	    background-image: url(imgs/face_bg.png);
+	  }
+	  
+	  .h5_component_name_slogan {
+	    -webkit-animation: rock 2s infinite 2s;
+	  }
+	  
+	  @-webkit-keyframes rock {
+	    0% {
+	      transform: rotate(0deg);
+	    }
+	    5% {
+	      transform: rotate(3deg);
+	    }
+	    10% {
+	      transform: rotate(-4deg);
+	    }
+	    15% {
+	      transform: rotate(3deg);
+	    }
+	    20% {
+	      transform: rotate(-2deg);
+	    }
+	    25% {
+	      transform: rotate(1deg);
+	    }
+	    30% {
+	      transform: rotate(-1deg);
+	    }
+	    70% {
+	      transform: rotate(0deg);
+	    }
+	    100% {
+	      transform: rotate(0deg);
+	    }
+	  }
+	  
+	  .h5_component_name_caption {
+	    background-image: url(imgs/page_caption_bg.png);
+	    width: 283px;
+	    height: 160px;
+	    text-align: center;
+	    line-height: 140px;
+	    font-size: 20px;
+	    color: #fff;
+	  }
+	  
+	  .h5_component_name_back {
+	    top: 30px;
+	    -webkit-animation: back 1s infinite 2s;
+	  }
+	  
+	  @-webkit-keyframes back {
+	    50% {
+	      top: 20px;
+	    }
+	  }
+  </style>
+  <!-- 主要逻辑 -->
+  <script type="text/javascript">
 	  $(function() {
 	    var h5 = new H5();
 
@@ -546,7 +555,7 @@
 		          $.fn.fullpage.moveTo(1);
 		        }
 		      })
-	      .loader();
+	      .loader(['imgs/description_bg.gif','imgs/face_bg.png','imgs/face_img_left.png','imgs/face_img_right.png','imgs/face_logo.png','imgs/face_slogan.png','imgs/footer.png','imgs/p1_people.png','imgs/page_bg.png','imgs/page_caption_bg.png','imgs/tail_back.png','imgs/tail_logo.png','imgs/tail_share.png','imgs/tail_slogan.png']);
 	  })
   </script>
 </body>
