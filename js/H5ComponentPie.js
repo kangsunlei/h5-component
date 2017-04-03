@@ -180,7 +180,6 @@ H5ComponentPie.reSort = function(list) {
 		if ($(domA).css('top') != 'auto') {
 			var topA = parseInt($(domA).css('top'));
 			var topB = parseInt($(domB).css('top'));
-			console.log(topA,topB);
 			if(topA>0){
 				$(domA).css('top', parseInt($(domA).css('top')) + $(domB).height());
 			}else{
@@ -188,7 +187,6 @@ H5ComponentPie.reSort = function(list) {
 			}
 		}else	if ($(domA).css('bottom') != 'auto') {
 			var butA = parseInt($(domA).css('bottom'));
-			console.log(butA);
 			if(butA<0){
 				$(domA).css('bottom', parseInt($(domA).css('bottom')) - $(domB).height());
 			}else{

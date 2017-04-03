@@ -1,5 +1,5 @@
 var H5 = function() {
-
+	var data = [];
 	this.page = [];
 	this.id = ('h5_' + Math.random()).replace('.', '');
 	this.el = $('<div class="h5" id="' + this.id + '">').hide();
@@ -12,6 +12,11 @@ var H5 = function() {
 	 * @return {H5} H5对象，可以重复使用H5对象支持的方法
 	 */
 	this.addPage = function(name, text) {
+			data.push({
+				isPage: true,
+				name: name,
+				text: text
+			});
 			var page = $('<div class="h5_page section">');
 			if (name != undefined) {
 				page.addClass('h5_page_' + name);
@@ -29,6 +34,12 @@ var H5 = function() {
 		}
 		// 新增组件
 	this.addComponent = function(name, cfg) {
+		data.push({
+			isComp: true,
+			name: name,
+			cfg: cfg
+		});
+
 		var cfg = cfg || {};
 		cfg = $.extend({
 			type: 'base'
@@ -58,6 +69,7 @@ var H5 = function() {
 			default:
 		}
 		page.append(component);
+		window.data = JSON.stringify(data);
 		return this;
 	}
 
