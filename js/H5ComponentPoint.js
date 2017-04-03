@@ -13,6 +13,7 @@ var H5ComponentPoint = function(name, cfg) {
 
 		var per = (item[1] / base * 100) + '%';
 		point.width(per).height(per);
+		point.children().css('font-size', per);
 		if (item[2]) {
 			point.css('background-color', item[2]);
 		}
