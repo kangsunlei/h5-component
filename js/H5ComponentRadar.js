@@ -1,4 +1,4 @@
-// 折线图
+// 雷达图
 var H5ComponentRadar = function(name, cfg) {
 	var component = new H5ComponentBase(name, cfg);
 
