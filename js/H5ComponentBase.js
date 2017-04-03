@@ -2,8 +2,8 @@ var H5ComponentBase = function(name, cfg) {
 	var cfg = cfg || {};
 	var id = ('h5_c_' + Math.random()).replace('.', '');
 
-	var cls = 'h5_component_' + cfg.type ;
-	var component = $('<div class="h5_component ' + cls +' h5_component_name_' + name+ '" id=' + id + '>');
+	var cls = 'h5_component_' + cfg.type;
+	var component = $('<div class="h5_component ' + cls + ' h5_component_name_' + name + '" id=' + id + '>');
 
 	cfg.text && component.text(cfg.text);
 
@@ -19,11 +19,18 @@ var H5ComponentBase = function(name, cfg) {
 			left: '50%'
 		})
 	}
+	// ...很多自定义参数
+	if(typeof cfg.onclick === 'function' ){
+		component.on('click',cfg.onclick);
+	}
 
 
 	component.on('onLoad', function() {
-		component.addClass(cls + '_load').removeClass(cls + '_leave');
-		cfg.animateIn && component.animate(cfg.animateIn);
+		setTimeout(function() {
+			component.addClass(cls + '_load').removeClass(cls + '_leave');
+			cfg.animateIn && component.animate(cfg.animateIn);
+		}, cfg.delay || 0);
+
 		return false;
 	});
 
